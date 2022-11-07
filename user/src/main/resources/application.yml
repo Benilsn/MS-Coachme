@@ -1,0 +1,22 @@
+server:
+  port: 8181
+
+spring:
+  application:
+    name: user
+
+  datasource:
+    url: jdbc:postgresql://172.21.0.20:5432/ms_users
+#    url: jdbc:postgresql://localhost:5432/ms_users
+    username: 'coachme'
+    password: 'root'
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+

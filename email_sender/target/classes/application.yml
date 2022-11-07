@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ms_emails
+
+  datasource:
+#    url: jdbc:postgresql://172.21.0.20:5432/ms_emails
+    url: jdbc:postgresql://localhost:5432/ms_emails
+    username: 'coachme'
+    password: 'root'
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+

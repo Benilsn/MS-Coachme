@@ -1,0 +1,15 @@
+br\com\coachme\models\Position.class
+br\com\coachme\models\User.class
+br\com\coachme\repositories\EloRepository.class
+br\com\coachme\models\Elo.class
+br\com\coachme\services\EmailSenderService.class
+br\com\coachme\repositories\UserRepository.class
+br\com\coachme\repositories\PositionRepository.class
+br\com\coachme\dtos\UserDto.class
+br\com\coachme\exceptions\UserAlreadyRegisteredException.class
+br\com\coachme\UserApplication.class
+br\com\coachme\controllers\UserController.class
+br\com\coachme\models\Role.class
+br\com\coachme\services\UserService.class
+br\com\coachme\repositories\RoleRepository.class
+br\com\coachme\exceptions\UserNotFoundException.class

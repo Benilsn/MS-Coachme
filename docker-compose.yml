@@ -1,0 +1,92 @@
+version: '3'
+
+services:
+  email_sender_app:
+    container_name: email_sender_app
+    image: reykon/email_sender:1
+    ports:
+      - "8080:8080"
+    networks:
+      coachme:
+        ipv4_address: 172.21.0.30
+    depends_on:
+      - coachme_db
+
+  #  mailCatcher:
+  #    container_name: mail_catcher
+  #    image: dockage/mailcatcher
+  #    ports:
+  #      - "1080:1080"
+  #      - "1025:1025"
+  #    networks:
+  #      coachme:
+  #        ipv4_address: 172.21.0.31
+
+  user_app:
+    container_name: user_app
+    image: reykon/user_ms:1
+    ports:
+      - "8181:8181"
+    networks:
+      coachme:
+        ipv4_address: 172.21.0.31
+    depends_on:
+      - coachme_db
+
+  mentorship_app:
+    container_name: mentorship_app
+    image: reykon/mentorship_ms:1
+    ports:
+      - "8282:8282"
+    networks:
+      coachme:
+        ipv4_address: 172.21.0.32
+    depends_on:
+      - coachme_db
+      - user_app
+
+  coachme_db:
+    container_name: coachme_db
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: coachme
+      POSTGRES_PASSWORD: root
+      PGDATA: /data/coachme_db
+    volumes:
+      - coachme_db:/data/coachme_db
+    networks:
+      coachme:
+        ipv4_address: 172.21.0.20
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - coachme
+    restart: unless-stopped
+
+networks:
+  coachme:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.21.0.1/21"
+  user:
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.22.0.1/22"
+
+volumes:
+  pgadmin:
+  coachme_db:

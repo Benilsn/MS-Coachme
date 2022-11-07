@@ -1,0 +1,8 @@
+br\com\coachme\repositories\EmailRepository.class
+br\com\coachme\dtos\EmailDto.class
+br\com\coachme\services\EmailService.class
+br\com\coachme\models\EmailModel.class
+br\com\coachme\config\EmailSender.class
+br\com\coachme\models\StatusEmail.class
+br\com\coachme\EmailSenderApplication.class
+br\com\coachme\controllers\EmailController.class

@@ -1,0 +1,15 @@
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\repositories\EloRepository.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\exceptions\UserNotFoundException.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\controllers\UserController.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\models\Elo.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\models\Role.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\repositories\RoleRepository.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\models\User.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\repositories\PositionRepository.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\exceptions\UserAlreadyRegisteredException.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\services\EmailSenderService.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\services\UserService.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\models\Position.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\dtos\UserDto.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\UserApplication.java
+C:\Users\BNDO\My Private Documents\CoachMe\coachme\user\src\main\java\br\com\coachme\repositories\UserRepository.java
