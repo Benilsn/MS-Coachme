@@ -1,13 +1,14 @@
-server:
-  port: 8282
 
 spring:
   application:
     name: mentorship
 
+  config:
+    import: optional:configserver:http://localhost:8888
+
   datasource:
-    url: jdbc:postgresql://172.21.0.20:5432/ms_mentorships
-#    url: jdbc:postgresql://localhost:5432/ms_mentorships
+#    url: jdbc:postgresql://172.21.0.20:5432/ms_mentorships
+    url: jdbc:postgresql://localhost:5432/ms_mentorships
     username: 'coachme'
     password: 'root'
 

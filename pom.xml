@@ -14,6 +14,8 @@
         <module>user</module>
         <module>mentorship</module>
         <module>config_server</module>
+        <module>service_discovery</module>
+        <module>gateway</module>
     </modules>
 
     <name>coachme</name>
