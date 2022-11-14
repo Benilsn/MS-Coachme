@@ -18,9 +18,11 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: 'true'
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     show-sql: 'true'
 
+  rabbitmq:
+    addresses: amqps://uvigbyif:R12FKow9Qqoag_FO6PWhx3ZV3T-ZiF8M@jackal.rmq.cloudamqp.com/uvigbyif
 
 
 

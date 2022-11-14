@@ -1,11 +1,15 @@
 package br.com.coachme.services;
 
 import java.net.Authenticator;
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.Date;
+
 import br.com.coachme.models.EmailModel;
 import br.com.coachme.models.StatusEmail;
 import br.com.coachme.repositories.EmailRepository;
 import com.sun.mail.smtp.SMTPSaslAuthenticator;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -21,8 +25,9 @@ public class EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
+
     public EmailModel sendEmail(EmailModel emailModel) {
-        emailModel.setSentDate(LocalDateTime.now());
+        emailModel.setSentDate(Date.from(Instant.now()));
         emailModel.setEmailFrom("lolcoachofficial@gmail.com");
 
         try {
@@ -32,14 +37,13 @@ public class EmailService {
             message.setSubject(emailModel.getSubject());
             message.setText(emailModel.getText());
             mailSender.send(message);
-
             emailModel.setStatusEmail(StatusEmail.SENT);
+
         } catch (MailException e) {
             System.out.println(e.getCause());
             emailModel.setStatusEmail(StatusEmail.ERROR);
-        } finally {
-            return emailRepository.save(emailModel);
         }
 
+        return emailRepository.save(emailModel);
     }
 }

@@ -1,19 +1,20 @@
 package br.com.coachme.models;
 
-import java.time.LocalDateTime;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.UUID;
+
 import lombok.Data;
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 
 @Data
 @Entity
 @Table(name = "tb_emails")
-public class EmailModel {
+public class EmailModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private UUID id;
 
     @Column
     private String ownerRef;
@@ -31,7 +32,7 @@ public class EmailModel {
     private String text;
 
     @Column
-    private LocalDateTime sentDate;
+    private Date sentDate;
 
     @Column
     private StatusEmail statusEmail;

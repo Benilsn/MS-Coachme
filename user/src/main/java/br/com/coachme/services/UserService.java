@@ -38,13 +38,13 @@ public class UserService {
             throw new UserAlreadyRegisteredException("E-mail already taken!");
         }
 
-        Role userRole = roleRepository.findById(1L).orElseThrow();
-        Elo noElo = eloRepository.findById(1L).orElseThrow();
-        Position noPosition = positionRepository.findById(6L).orElseThrow();
+//        Role userRole = roleRepository.findById(1L).orElseThrow();
+//        Elo noElo = eloRepository.findById(1L).orElseThrow();
+//        Position noPosition = positionRepository.findById(6L).orElseThrow();
 
-        user.setRole(userRole);
-        user.setElo(noElo);
-        user.setPosition(noPosition);
+//        user.setRole(userRole);
+//        user.setElo(noElo);
+//        user.setPosition(noPosition);
 
         sendEmail(user.getName(),
                 user.getEmail(),
