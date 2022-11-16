@@ -10,6 +10,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/email_send/pom.xml" />
+        <option value="$PROJECT_DIR$/email_sender2/pom.xml" />
       </set>
     </option>
   </component>
