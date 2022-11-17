@@ -1,4 +1,3 @@
-
 spring:
   application:
     name: emailsender
@@ -7,7 +6,6 @@ spring:
     import: optional:configserver:http://localhost:8888
 
   datasource:
-#    url: jdbc:postgresql://172.21.0.20:5432/ms_emails
     url: jdbc:postgresql://localhost:5432/ms_emails
     username: 'coachme'
     password: 'root'
@@ -21,8 +19,21 @@ spring:
       ddl-auto: create-drop
     show-sql: 'true'
 
+  sleuth:
+    integration:
+      enabled: true
+
+  zipkin:
+    base-url: http://localhost:9411
+
   rabbitmq:
-    addresses: amqps://uvigbyif:R12FKow9Qqoag_FO6PWhx3ZV3T-ZiF8M@jackal.rmq.cloudamqp.com/uvigbyif
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+#    addresses: amqps://uvigbyif:R12FKow9Qqoag_FO6PWhx3ZV3T-ZiF8M@jackal.rmq.cloudamqp.com/uvigbyif
+
 
 
 

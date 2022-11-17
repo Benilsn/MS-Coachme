@@ -4,6 +4,7 @@ import javax.validation.Valid;
 import br.com.coachme.config.RabbitMQConfig;
 import br.com.coachme.dtos.EmailDto;
 import br.com.coachme.models.EmailModel;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Slf4j
 public class EmailController {
 
     @Autowired
